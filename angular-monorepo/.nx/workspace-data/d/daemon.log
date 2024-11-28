@@ -1,0 +1,11 @@
+[NX Daemon Server] - 2024-11-19T08:28:26.270Z - Started listening on: /tmp/5709b25a68/d.sock
+[NX Daemon Server] - 2024-11-19T08:28:26.276Z - [WATCHER]: Subscribed to changes within: /home/iut45/Etudiants/o22201562/Documents/quali-dev-order-flow/angular-monorepo (native)
+[NX Daemon Server] - 2024-11-19T08:28:26.280Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-19T08:28:26.282Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-11-19T08:28:26.285Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-19T08:28:26.288Z - [REQUEST]: Responding to the client. Shutdown initiated
+[NX Daemon Server] - 2024-11-19T08:28:26.288Z - Done responding to the client Shutdown initiated
+[NX Daemon Server] - 2024-11-19T08:28:26.289Z - Handled FORCE_SHUTDOWN. Handling time: 1. Response time: 1.
+[NX Daemon Server] - 2024-11-19T08:28:26.292Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-19T08:28:26.293Z - [WATCHER]: Stopping the watcher for /home/iut45/Etudiants/o22201562/Documents/quali-dev-order-flow/angular-monorepo (sources)
+[NX Daemon Server] - 2024-11-19T08:28:26.295Z - [WATCHER]: Stopping the watcher for /home/iut45/Etudiants/o22201562/Documents/quali-dev-order-flow/angular-monorepo (outputs)
