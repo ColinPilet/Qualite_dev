@@ -12,21 +12,30 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class ProductRemoved extends Event implements ProductRegistryEvent {
   private final static String EVENT_TYPE = "ProductRemoved";
 
-  public static final class Payload {
-    /**
-     * The id of the product.
-     */
-    public ProductId productId;
-
-    public Payload(@JsonProperty("productId") ProductId productId) {
-      this.productId = productId;  
-    }
-  }
+  public record Payload(ProductId productId) {}
 
   /**
    * The payload for the event.
    */
-  public Payload payload;
+  private Payload payload;
+
+  /**
+   * Returns the payload for the event.
+   * 
+   * @return The payload for the event.
+   */
+  public Payload getPayload() {
+    return payload;
+  }
+
+  /**
+   * Sets the payload for the event.
+   * 
+   * @param payload - The payload to set.
+   */
+  public void setPayload(Payload payload) {
+    this.payload = payload;
+  }
 
   /**
    * Constructor.

@@ -6,25 +6,30 @@ public class ProductRegisteredEventEntity extends ProductRegistryEventEntity {
   /**
    * Payload for the event.
    */
-  public static class Payload {
-    /**
-     * The id of the product.
-     */
-    public String productId;
-    /**
-     * The name of the product.
-     */
-    public String name;
-    /**
-     * The description of the product.
-     */
-    public String productDescription;
-  }
+  public record Payload(String productId, String name, String productDescription) {}
 
   /**
    * The payload for the event.
    */
-  public Payload payload;
+  private Payload payload;
+
+  /**
+   * Returns the payload for the event.
+   * 
+   * @return The payload for the event.
+   */
+  public Payload getPayload() {
+    return payload;
+  }
+
+  /**
+   * Sets the payload for the event.
+   * 
+   * @param payload The payload to set.
+   */
+  public void setPayload(Payload payload) {
+    this.payload = payload;
+  }
 
   @Override
   public String getEventType() {

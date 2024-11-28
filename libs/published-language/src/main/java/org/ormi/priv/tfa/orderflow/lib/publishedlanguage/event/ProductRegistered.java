@@ -12,34 +12,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class ProductRegistered extends Event implements ProductRegistryEvent {
   private final static String EVENT_TYPE = "ProductRegistered";
 
-  public static final class Payload {
-    /**
-     * The id of the product.
-     */
-    public ProductId productId;
-    /**
-     * The name of the product.
-     */
-    public final String name;
-    /**
-     * The description of the product.
-     */
-    public final String productDescription;
-
-    public Payload(
-      @JsonProperty("productId") ProductId productId,
-      @JsonProperty("name") String name,
-      @JsonProperty("productDescription") String productDescription) {
-      this.productId = productId;
-      this.name = name;
-      this.productDescription = productDescription;
-    }
-  }
+  public record Payload(ProductId productId, String name, String productDescription) {}
 
   /**
    * The payload for the event.
    */
-  public Payload payload;
+  private Payload payload;
 
   /**
    * Constructor.
@@ -57,6 +35,24 @@ public final class ProductRegistered extends Event implements ProductRegistryEve
       @JsonProperty("timestamp") long timestamp,
       @JsonProperty("payload") Payload payload) {
     super(id, aggregateId, version, timestamp, EVENT_TYPE);
+    this.payload = payload;
+  }
+
+  /**
+   * Returns the payload for the event.
+   * 
+   * @return The payload for the event.
+   */
+  public Payload getPayload() {
+    return payload;
+  }
+
+  /**
+   * Sets the payload for the event.
+   * 
+   * @param payload - The payload to set.
+   */
+  public void setPayload(Payload payload) {
     this.payload = payload;
   }
 
