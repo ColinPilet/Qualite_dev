@@ -335,7 +335,7 @@ public class ProductRegistryCommandResource {
           .topic(topic)
           .subscribe();
     } catch (PulsarClientException e) {
-      throw new RuntimeException("Failed to create consumer for product registry events.", e);
+      throw new ProductRegistryEventStreamException("Failed to create consumer for product registry events.", e);
     }
   }
 }
